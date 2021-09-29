@@ -8,16 +8,11 @@ entity Certificates   {
     duration : Integer;
     price : Decimal;
     isActive : Boolean;
-    tags : Association to many Certificates_Tags on tags.certificate = $self;
+    tags : Composition of many {key tag : Association to Tags;};
 }
 
 entity Tags {
     key ID : Integer;
     name : String(150);
-    certificates : Association to many Certificates_Tags on certificates.tag = $self;
-}
-
-entity Certificates_Tags {
-    certificate : Association to Certificates;
-    tag : Association to Tags;
+    certificates : Association to many Certificates.tags on certificates.tag = $self;
 }

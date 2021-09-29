@@ -3,11 +3,15 @@
 # Create book
 POST {{server}}/certificate/Certificates
 Content-Type: application/json;IEEE754Compatible=true
+Authorization: Basic admin:123
 
 {
-  "ID": 4,
+  "ID": 66666,
   "name": "hey",
   "description": "e which does not compromise content. Poems: Bronte contains poems that demonstrate a sensibility elemental in its force with an imaginative discipline and flexibility of the highest order. Also included are an Editor's Note and an index of first lines.",
   "duration": 1,
-  "price": 105
+  "price": 105,
+  "tags" : [{
+      "tag_ID" : 1
+  }]
 }
