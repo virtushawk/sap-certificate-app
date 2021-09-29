@@ -1,1 +1,13 @@
-{}
+{ 
+  "requires": {
+    "auth": {
+      "strategy": "mock",
+      "users": {
+        "admin": { 
+          "password": "123", 
+          "roles": ["admin"]
+        }
+      }
+    }
+  }
+}

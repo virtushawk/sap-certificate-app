@@ -1,7 +1,7 @@
 @server = http://localhost:4004
 
 # Create book
-POST {{server}}/certificate/certificates
+POST {{server}}/certificate/Certificates
 Content-Type: application/json;IEEE754Compatible=true
 
 {
@@ -9,6 +9,5 @@ Content-Type: application/json;IEEE754Compatible=true
   "name": "hey",
   "description": "e which does not compromise content. Poems: Bronte contains poems that demonstrate a sensibility elemental in its force with an imaginative discipline and flexibility of the highest order. Also included are an Editor's Note and an index of first lines.",
   "duration": 1,
-  "price": 105,
-  "tags" : [{"tags" : 1}]
+  "price": 105
 }
