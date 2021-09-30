@@ -27,6 +27,7 @@ modules:
    requires:
     # Resources extracted from CAP configuration
     - name: sap-certificate-app-db
+    - name: sap-certificate-app-uaa
    provides:
     - name: srv-api      # required by consumers of CAP services (e.g. approuter)
       properties:
@@ -42,6 +43,7 @@ modules:
    requires:
     # 'hana' and 'xsuaa' resources extracted from CAP configuration
     - name: sap-certificate-app-db
+    - name: sap-certificate-app-uaa
 
 
 resources:
@@ -56,5 +58,15 @@ resources:
      service-plan: hdi-shared
    properties:
      hdi-service-name: ${service-name}
+# ------------------------------------------------------------
+ - name: sap-certificate-app-uaa
+# ------------------------------------------------------------
+   type: org.cloudfoundry.managed-service
+   parameters:
+     service: xsuaa
+     service-plan: application  
+     config:
+       xsappname: sap-certificate-app-${space}    #  name + space dependency
+       tenant-mode: dedicated
 
 
